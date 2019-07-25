@@ -9,7 +9,7 @@
 std::vector<std::string> Console_input::obtain_urls() {
 	std::vector<std::string> urls;
 	std::string url_in = "";
-	std::cout << "Enter the URLS to add (\"done\" to finish): \n";
+	std::cout << "Enter the URLS to add, each on a seperate line (\"done\" to finish): \n";
 	while (1) {
 		std::cin >> url_in;
 		if (url_in == "done") break;
