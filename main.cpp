@@ -10,7 +10,7 @@ int main() {
 
 	// IObtain_urls subclasses
 	Console_input console_input;
-	File_input file_input("urfdl-list.txt");
+	File_input file_input("url-list.txt");
 
 	// IMetric subclasses
 	Response_time response_time;
