@@ -37,16 +37,16 @@ int main() {
 	 net1.results_log();
 	 net1.errors_log();
 
-	 // Net_time with urls from the console, measuring TTFB, logging to a file (results.txt)
-	 // Logging errors to a file (errors.txt) and sorting by descending_time
-
-	 Net_time net2(&console_input, &ttfb , &file_log1);
-	 net2.set_filter(&descending_time);
-	 std::cout << "Working on it...\n";
-	 net2.execute();
-	 net2.filter_results();
-	 net2.results_log();
-	 net2.set_log(&file_log2);
-	 net2.errors_log();
-	 std::cout << "results.txt and errors.txt created\n";
+	 // // Net_time with urls from the console, measuring TTFB, logging to a file (results.txt)
+	 // // Logging errors to a file (errors.txt) and sorting by descending_time
+	 //
+	 // Net_time net2(&console_input, &ttfb , &file_log1);
+	 // net2.set_filter(&descending_time);
+	 // std::cout << "Working on it...\n";
+	 // net2.execute();
+	 // net2.filter_results();
+	 // net2.results_log();
+	 // net2.set_log(&file_log2);
+	 // net2.errors_log();
+	 // std::cout << "results.txt and errors.txt created\n";
 }

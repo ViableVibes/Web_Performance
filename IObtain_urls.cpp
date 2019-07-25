@@ -31,7 +31,7 @@ std::vector<std::string> File_input::obtain_urls() {
 		while(1) {
 	            getline(in_file, url);
 	            urls.push_back(url);
-				if(! in_file.eof()) break;
+				if(in_file.eof()) break;
 	    }
 	}
 	else {std::cout << "Error opening that file\n";}
