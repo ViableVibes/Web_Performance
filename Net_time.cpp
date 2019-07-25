@@ -28,6 +28,7 @@ void Net_time::execute() {
     	curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data); // Suppresses nasty output
         curl_easy_setopt(curl, CURLOPT_URL, url.c_str()); // Sets URL
 
+        // Added for testing/ display purposes
         // Long value input is seconds to wait for curl operation to complete
         curl_easy_setopt(curl, CURLOPT_TIMEOUT, 10L); // Sets max time to 10 seconds
 
