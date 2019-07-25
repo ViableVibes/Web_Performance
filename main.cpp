@@ -10,7 +10,7 @@ int main() {
 
 	// IObtain_urls subclasses
 	Console_input console_input;
-	File_input file_input("url-list.txt");
+	File_input file_input("url-list.txt"); // Very large file! 
 
 	// IMetric subclasses
 	Response_time response_time;
@@ -28,14 +28,20 @@ int main() {
 	////////////////////////////////////////////////
 	//examples
 
-	// Net_time with urls from a file (url-list.txt), measuring response time,
-	// logging to the console, and sorting by ascending times
-	 Net_time net1(&file_input, &response_time, &console_log, &ascending_time);
-	 std::cout << "Working on it...\n";
-	 net1.execute();
-	 net1.filter_results();
-	 net1.results_log();
-	 net1.errors_log();
+	Net_time net_simple(&console_input, &response_time, &console_log, &ascending_time);
+	net_simple.execute();
+	net_simple.filter_results();
+	net_simple.results_log();
+	net_simple.errors_log();
+
+	// // Net_time with urls from a file (url-list.txt), measuring response time,
+	// // logging to the console, and sorting by ascending times
+	//  Net_time net1(&file_input, &response_time, &console_log, &ascending_time);
+	//  std::cout << "Working on it...\n";
+	//  net1.execute();
+	//  net1.filter_results();
+	//  net1.results_log();
+	//  net1.errors_log();
 
 	 // // Net_time with urls from the console, measuring TTFB, logging to a file (results.txt)
 	 // // Logging errors to a file (errors.txt) and sorting by descending_time

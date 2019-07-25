@@ -6,6 +6,7 @@
 // Console_log function definitions
 
 void Console_log::results_log(const std::vector<std::pair<std::string, double>> &results) const  {
+	std::cout << "**********************************************\n";
 	if (results.size() == 0) {
 		std::cout << "No Results\n";
 		return;
@@ -15,9 +16,11 @@ void Console_log::results_log(const std::vector<std::pair<std::string, double>> 
 		std::cout << results[i].first << ": ";
 		std::cout << results[i].second << std::endl;
 	}
+	std::cout << "**********************************************\n";
 }
 
 void Console_log::errors_log(const std::vector<std::pair<std::string, std::string>> &errors) const {
+	std::cout << "**********************************************\n";
 	if (errors.size() == 0) {
 		std::cout << "No Errors\n";
 		return;
@@ -27,6 +30,7 @@ void Console_log::errors_log(const std::vector<std::pair<std::string, std::strin
 		std::cout << errors[i].first << ": ";
 		std::cout << errors[i].second << std::endl;
 	}
+	std::cout << "**********************************************\n";
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

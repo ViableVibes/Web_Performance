@@ -29,9 +29,10 @@ std::vector<std::string> File_input::obtain_urls() {
 
 	if (in_file.is_open()) {
 		while(1) {
+				if(in_file.eof()) break;
 	            getline(in_file, url);
 	            urls.push_back(url);
-				if(in_file.eof()) break;
+
 	    }
 	}
 	else {std::cout << "Error opening that file\n";}

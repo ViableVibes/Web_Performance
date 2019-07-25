@@ -1,6 +1,9 @@
 #include "Net_time.hpp"
 #include "IMetric.hpp"
 
+// The max time (seconds) for an operation to be performed. 0 = 300 seconds (default)
+const long TIME_OUT = 3;
+
 // Constructors
 Net_time::Net_time(IObtain_urls* obtain_urls, IMetric* metric, ILog* log) :
 _obtain_urls (obtain_urls), _metric (metric), _log (log)
@@ -29,8 +32,7 @@ void Net_time::execute() {
         curl_easy_setopt(curl, CURLOPT_URL, url.c_str()); // Sets URL
 
         // Added for testing/ display purposes
-        // Long value input is seconds to wait for curl operation to complete
-        curl_easy_setopt(curl, CURLOPT_TIMEOUT, 10L); // Sets max time to 10 seconds
+        curl_easy_setopt(curl, CURLOPT_TIMEOUT, TIME_OUT);
 
     	result_code = curl_easy_perform(curl); // Checks URL
 
