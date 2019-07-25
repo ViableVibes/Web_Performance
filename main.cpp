@@ -25,11 +25,11 @@ int main() {
 	Ascending_time ascending_time;
 	Descending_time descending_time;
 
-////////////////////////////////////////////////
-//examples
+	////////////////////////////////////////////////
+	//examples
 
-// Net_time with urls from a file (url-list.txt), measuring response time,
-// logging to the console, and sorting by ascending times
+	// Net_time with urls from a file (url-list.txt), measuring response time,
+	// logging to the console, and sorting by ascending times
 	 Net_time net1(&file_input, &response_time, &console_log, &ascending_time);
 	 std::cout << "Working on it...\n";
 	 net1.execute();

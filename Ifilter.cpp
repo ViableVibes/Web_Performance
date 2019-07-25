@@ -22,7 +22,7 @@ void Ascending_time::filter_results(std::vector<std::pair<std::string, double>> 
 bool sort_time_desc(const std::pair<std::string,double> &a,
               const std::pair<std::string,double> &b)
 {
-    return (a.second < b.second);
+    return (a.second > b.second);
 }
 
 void Descending_time::filter_results(std::vector<std::pair<std::string, double>> &results) {
