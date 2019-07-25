@@ -23,6 +23,7 @@ void Console_log::errors_log(const std::vector<std::pair<std::string, std::strin
 	std::cout << "**********************************************\n";
 	if (errors.size() == 0) {
 		std::cout << "No Errors\n";
+		std::cout << "**********************************************\n";
 		return;
 	}
 	std::cout << "ERRORS:\n";
