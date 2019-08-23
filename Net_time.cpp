@@ -1,5 +1,4 @@
 #include "Net_time.hpp"
-#include "IMetric.hpp"
 
 // The max time (seconds) for an operation to be performed. 0 = 300 seconds (default)
 const long TIME_OUT = 3;
@@ -9,9 +8,9 @@ Net_time::Net_time(IObtain_urls* obtain_urls, IMetric* metric, ILog* log) :
 _obtain_urls (obtain_urls), _metric (metric), _log (log)
 {update_urls();}
 
-Net_time::Net_time(IObtain_urls* obtain_urls, IMetric* metric, ILog* log, IFilter* filter) :
-_obtain_urls (obtain_urls), _metric (metric), _log (log), _filter (filter)
-{update_urls();}
+// Net_time::Net_time(IObtain_urls* obtain_urls, IMetric* metric, ILog* log, IFilter* filter) :
+// _obtain_urls (obtain_urls), _metric (metric), _log (log), _filter (filter)
+// {update_urls();}
 
 // Used for suppression of HTML output with CURL commands
 static size_t write_data(void *buffer, size_t size, size_t nmemb, void *userp) {
@@ -61,10 +60,10 @@ void Net_time::update_urls() {_urlList = _obtain_urls->obtain_urls();}
 void Net_time::results_log() {_log->results_log(_results);}
 void Net_time::errors_log() {_log->errors_log(_errors);}
 void Net_time::clear_results() {_results.clear();}
-void Net_time::filter_results() {
-    if (_filter) _filter->filter_results(_results);
-}
+// void Net_time::filter_results() {
+//     if (_filter) _filter->filter_results(_results);
+// }
 void Net_time::set_obtain_urls(IObtain_urls* obtain_urls) { _obtain_urls = obtain_urls;}
 void Net_time::set_log(ILog* log) {_log = log;}
 void Net_time::set_metric(IMetric* metric) {_metric = metric;}
-void Net_time::set_filter(IFilter* filter) {_filter = filter;}
+// void Net_time::set_filter(IFilter* filter) {_filter = filter;}

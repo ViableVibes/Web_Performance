@@ -5,7 +5,7 @@
 #include "IObtain_urls.hpp"
 #include "IMetric.hpp"
 #include "ILog.hpp"
-#include "IFilter.hpp"
+// #include "IFilter.hpp"
 
 class Net_time {
 private:
@@ -28,7 +28,7 @@ public:
 	void errors_log(); // Logs the errors from execution(s)
 	void results_log(); // Logs the results from execution(s)
 	void clear_results(); // Clears the results from execution(s)
-	void filter_results(); // Applies a filter after an execution returns results
+	// void filter_results(); // Applies a filter after an execution returns results
 
 	void execute(); // Executes the query based on the set metric
 
@@ -36,7 +36,7 @@ public:
 	void set_obtain_urls(IObtain_urls* obtain_urls);
 	void set_log(ILog* log);
 	void set_metric(IMetric* metric);
-	void set_filter(IFilter* filter);
+	// void set_filter(IFilter* filter);
 };
 
 #endif

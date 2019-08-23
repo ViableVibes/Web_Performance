@@ -10,7 +10,7 @@ int main() {
 
 	// IObtain_urls subclasses
 	Console_input console_input;
-	File_input file_input("url-list.txt"); // Very large file! 
+	File_input file_input("url-list.txt"); // Very large file!
 
 	// IMetric subclasses
 	Response_time response_time;
@@ -22,15 +22,15 @@ int main() {
 	File_log file_log2("errors.txt");
 
 	// Filter subclasses
-	Ascending_time ascending_time;
-	Descending_time descending_time;
+	// Ascending_time ascending_time;
+	// Descending_time descending_time;
 
 	////////////////////////////////////////////////
 	//examples
 
-	Net_time net_simple(&console_input, &response_time, &console_log, &ascending_time);
+	Net_time net_simple(&console_input, &response_time, &console_log);
 	net_simple.execute();
-	net_simple.filter_results();
+	// net_simple.filter_results();
 	net_simple.results_log();
 	net_simple.errors_log();
 
