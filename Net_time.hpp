@@ -12,7 +12,7 @@ private:
 	IObtain_urls* _obtain_urls;
 	IMetric* _metric;
 	ILog* _log;
-	IFilter* _filter = nullptr;
+	// IFilter* _filter = nullptr;
 
 	std::vector<std::string> _urlList;
 	std::vector<std::pair<std::string, double>> _results;
@@ -22,7 +22,7 @@ public:
 	// Constructor requires (IObtain_urls, IMetric, ILog)
 	Net_time(IObtain_urls* obtain_list, IMetric* metric, ILog* log);
 	// Constructor with optional filter argument
-	Net_time(IObtain_urls* obtain_urls, IMetric* metric, ILog* log, IFilter* filter);
+	// Net_time(IObtain_urls* obtain_urls, IMetric* metric, ILog* log);
 
 	void update_urls(); // Replaces the URL list with a new retrieval
 	void errors_log(); // Logs the errors from execution(s)
