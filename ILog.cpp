@@ -1,6 +1,15 @@
 #include "ILog.hpp"
 #include <iostream>
 #include <fstream>
+#include <algorithm>
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// Helper function declarations
+bool sort_time_asc(const std::pair<std::string,double> &a,
+              const std::pair<std::string,double> &b);
+
+bool sort_time_desc(const std::pair<std::string,double> &a,
+            const std::pair<std::string,double> &b);
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Console_log function definitions
@@ -11,10 +20,14 @@ void Console_log::results_log(const std::vector<std::pair<std::string, double>> 
 		std::cout << "No Results\n";
 		return;
 	}
+
+	std::vector<std::pair<std::string, double>> sorted_results = results;
+	std::sort(sorted_results.begin(), sorted_results.end(), sort_time_asc);
+
 	std::cout << "Results (seconds):\n";
-	for (std::size_t i = 0; i < results.size(); i++) {
-		std::cout << results[i].first << ": ";
-		std::cout << results[i].second << std::endl;
+	for (std::size_t i = 0; i < sorted_results.size(); i++) {
+		std::cout << sorted_results[i].first << ": ";
+		std::cout << sorted_results[i].second << std::endl;
 	}
 	std::cout << "**********************************************\n";
 }
@@ -76,4 +89,18 @@ void File_log::errors_log(const std::vector<std::pair<std::string, std::string>>
 File_log::File_log(std::string file_name) {_file_name = file_name;}
 void File_log::set_file_name(std::string file_name) {_file_name = file_name;}
 
+//////////////////////////////////////////////////////////////////////////////////////////
+// Helper function definitions
+
+bool sort_time_desc(const std::pair<std::string,double> &a,
+              const std::pair<std::string,double> &b)
+{
+    return (a.second > b.second);
+}
+
+bool sort_time_asc(const std::pair<std::string,double> &a,
+              const std::pair<std::string,double> &b)
+{
+    return (a.second < b.second);
+}
 //////////////////////////////////////////////////////////////////////////////////////////

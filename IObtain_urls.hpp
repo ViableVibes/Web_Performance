@@ -10,7 +10,7 @@
 class IObtain_urls {
 public:
 	virtual std::vector<std::string> obtain_urls() = 0;
-	~IObtain_urls(){};
+	virtual ~IObtain_urls(){};
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////
